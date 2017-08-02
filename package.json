@@ -1,0 +1,18 @@
+{
+  "name": "Scraper",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "script.js"
+  },
+  "dependencies": {
+    "request"    : "latest",
+    "moment"    : "latest",
+    "fs"          : "latest",
+    "nodemailer": "latest",
+    "cron" : "latest"
+  },
+  "author": "Tyler Machado",
+  "license": "BSD"
+}
