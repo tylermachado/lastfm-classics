@@ -1,18 +1,19 @@
 {
   "name": "10 Year Special Edition",
   "version": "0.0.0",
-  "description": "See what you were listening to this week ten years ago, using your Last.fm data."
+  "description": "See what you were listening to this week ten years ago, using your Last.fm data.",
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "script.js"
   },
   "dependencies": {
-    "request"    : "latest",
-    "moment"    : "latest",
-    "fs"          : "latest",
+    "cron": "latest",
+    "dotenv": "^4.0.0",
+    "fs": "latest",
+    "moment": "latest",
     "nodemailer": "latest",
-    "cron" : "latest"
+    "request": "latest"
   },
   "author": "Tyler Machado",
   "license": "BSD"

@@ -1,11 +1,12 @@
 var request	=	require("request"),
 	fs = 		require('fs'),
 	moment =	require('moment'),
-	nodemailer = require("nodemailer");
+	nodemailer = require("nodemailer"),
+	dotenv =	require('dotenv').config();
 
-var user = "jellybones07",
-	apiKey = "48ab59da2b9f581860ae9e0f88ce1af3",
-	yearsBack = 10;
+var user = process.env.USERNAME,
+	apiKey = process.env.APIKEY,
+	yearsBack = process.env.YEARSBACK;
 
 var now = Date.now();
 var pastFrom = moment().subtract(yearsBack, "years").unix();
