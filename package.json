@@ -1,6 +1,7 @@
 {
-  "name": "Scraper",
-  "version": "1.0.0",
+  "name": "10 Year Special Edition",
+  "version": "0.0.0",
+  "description": "See what you were listening to this week ten years ago, using your Last.fm data."
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
