@@ -16,6 +16,6 @@
     "nodemailer": "latest",
     "request": "latest"
   },
-  "author": "Tyler Machado",
+  "author": "tylermachado",
   "license": "BSD"
 }
