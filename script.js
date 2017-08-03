@@ -2,7 +2,9 @@ var request	=	require("request"),
 	fs = 		require('fs'),
 	moment =	require('moment'),
 	nodemailer = require("nodemailer"),
-	dotenv =	require('dotenv').config();
+	dotenv =	require('dotenv').config(),
+	express=	require('express'),
+	app =		express();
 
 var user = process.env.USERNAME,
 	apiKey = process.env.APIKEY,
@@ -25,6 +27,14 @@ request(url, function (error, response, body) {
 	} else {
 		console.log("We’ve encountered an error: " + error);
 	}
+});
+
+app.get('/', function (req, res) {
+  res.send('Hello World!')
+});
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!')
 });
 
 

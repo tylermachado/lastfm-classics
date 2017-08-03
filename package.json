@@ -1,5 +1,5 @@
 {
-  "name": "Last.fm Classics",
+  "name": "Lastfm Classics",
   "version": "0.0.0",
   "description": "See what you were listening to this week ten years ago, using your Last.fm data.",
   "main": "script.js",
@@ -10,6 +10,7 @@
   "dependencies": {
     "cron": "latest",
     "dotenv": "^4.0.0",
+    "express": "^4.15.3",
     "fs": "latest",
     "moment": "latest",
     "nodemailer": "latest",
