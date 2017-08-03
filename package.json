@@ -1,5 +1,5 @@
 {
-  "name": "10 Year Special Edition",
+  "name": "Last.fm Classics",
   "version": "0.0.0",
   "description": "See what you were listening to this week ten years ago, using your Last.fm data.",
   "main": "script.js",
