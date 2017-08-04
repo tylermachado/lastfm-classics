@@ -21,7 +21,7 @@ var url = "http://ws.audioscrobbler.com/2.0/?method=user.getweeklyalbumchart" +
 			"&api_key=" + apiKey + 
 			"&format=json";
 			 
-slack = new Slack();
+var slack = new Slack();
 slack.setWebhook(process.env.SLACK_WEBHOOK);
 
 request(url, function (error, response, body) {
