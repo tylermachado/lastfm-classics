@@ -13,8 +13,10 @@
     "express": "^4.15.3",
     "fs": "latest",
     "moment": "latest",
-    "nodemailer": "latest",
-    "request": "latest"
+    "nodemailer": "^4.0.1",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "request": "latest",
+    "slack-node": "^0.1.8"
   },
   "author": "tylermachado",
   "license": "BSD"
