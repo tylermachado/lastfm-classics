@@ -23,14 +23,23 @@ var url = "http://ws.audioscrobbler.com/2.0/?method=user.getweeklyalbumchart" +
 
 request(url, function (error, response, body) {
 	if (!error) {
-		console.log(body);
+    
+    var list = JSON.parse(body);
+    
+    list = list.weeklyalbumchart.album;
+    
+    var array = [];
+    
+    for (var i=0; i<10; i++) {
+      array.push(list[i].artist["#text"] + ", " + list[i].name)
+    }
+    
+		app.get('/', function (req, res) {
+      res.send(array);
+    });
 	} else {
 		console.log("We’ve encountered an error: " + error);
 	}
-});
-
-app.get('/', function (req, res) {
-  res.send('Hello World!')
 });
 
 app.listen(3000, function () {
