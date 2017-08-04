@@ -12,7 +12,7 @@ var user = process.env.USERNAME,
 
 var now = Date.now();
 var pastFrom = moment().subtract(yearsBack, "years").unix();
-var pastTo 	 = moment().subtract(yearsBack, "years").add(7, "days").unix();
+var pastTo 	 = moment().subtract(yearsBack, "years").add(1, "days").unix();
 
 var url = "http://ws.audioscrobbler.com/2.0/?method=user.getweeklyalbumchart" + 
 			"&user=" + user + 
@@ -35,19 +35,23 @@ request(url, function (error, response, body) {
 	    
 	    for (var i=0; i<10; i++) {
 	    	var obj = new Object();
-	    	obj.text = (i+1) + ". " + list[i].artist["#text"] + ", " + list[i].name;
-	      	array.push(obj);
+	    	if (list[i]) {
+		    	obj.text = (i+1) + ". " + list[i].artist["#text"] + ", " + list[i].name;
+		      	array.push(obj);
+		      }
 	    }
 
-	    slack.webhook({
-	      channel: "#general",
-	      username: "Last.fm Classics",
-	      icon_emoji: ":musical_note:",
-	      text: "Here's what you listened to this week 10 years ago:",
-	      attachments: array
-	    }, function(err, response) {
-	      console.log(response);
-	    });
+	    if (array.length > 0) {
+		    slack.webhook({
+		      channel: "#general",
+		      username: "Last.fm Classics",
+		      icon_emoji: ":musical_note:",
+		      text: "Here's what you were listening to on this date " + process.env.YEARSBACK + " years ago:",
+		      attachments: array
+		    }, function(err, response) {
+		      console.log(url);
+		    });
+		}
 	    
 		app.get('/', function (req, res) {
 	      res.send(array);
